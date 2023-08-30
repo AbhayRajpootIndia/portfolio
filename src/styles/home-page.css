@@ -1,0 +1,69 @@
+.home-page-container {
+  background-color: var(--BackgroundShade);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+
+.intro-containner {
+  background-color: none;
+  padding-left: 5rem;
+  width: 50%;
+}
+
+.intro-containner > p:nth-child(1) {
+  color: var(--HeadingColor);
+  max-width: 80%;
+  width: fit-content;
+  font-size: 2rem;
+  font-family: Roboto;
+  font-weight: 700;
+  word-wrap: break-word;
+  background-color: none;
+  margin: 1rem 0.5rem;
+}
+
+.intro-containner > p:nth-child(2) {
+  color: var(--HeadingColor);
+  max-width: 100%;
+  width: fit-content;
+  background-color: none;
+  font-size: 3.5rem;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 4rem;
+  word-wrap: break-word;
+  margin: 1rem 0.5rem;
+}
+
+.intro-containner > p:nth-child(3) {
+  color: var(--BodyColor);
+  max-width: 70%;
+  width: fit-content;
+  background-color: none;
+  font-size: 1rem;
+  font-family: Roboto;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin: 1rem 0.5rem;
+}
+
+.intro-containner > Button:hover {
+  background-color: var(--PrimaryColorDarker);
+}
+
+.intro-image-containner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 45%;
+  padding-bottom: 1rem;
+}
+
+.intro-image-containner > img {
+  width: 85%;
+}
