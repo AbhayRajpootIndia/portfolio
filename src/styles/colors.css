@@ -1,7 +1,9 @@
 :root {
   --PrimaryColor: #5e3bee;
   --PrimaryColorDarker: #4e2ece;
+  --PrimaryColorLighter: #9c87ee;
   --BodyColor: #1c1e53;
   --HeadingColor: #282938;
+  --HeadingColorLighter: #64689e;
   --BackgroundShade: #f5fcff;
 }

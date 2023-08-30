@@ -1,0 +1,31 @@
+.link-with-arrow-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  margin: 1rem 0rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--PrimaryColor);
+}
+
+.link-with-arrow-container:hover {
+  background-color: rgba(174, 165, 255, 0.116);
+}
+
+.link-with-arrow-container > p {
+  color: var(--HeadingColor);
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin: 0;
+}
+.link-with-arrow-container > p:hover {
+  color: var(--HeadingColorLighter);
+}
+
+.link-with-arrow-container > img {
+  width: 0.8rem;
+  color: red;
+}

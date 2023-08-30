@@ -23,8 +23,8 @@ function HomePage() {
               backgroundColor: PrimaryColor,
               padding: "0.4rem 1rem",
               fontSize: "1rem",
-              marginRight: "3rem",
               minWidth: "10rem",
+              marginLeft: "0.5rem",
             }}
           >
             Get in touch

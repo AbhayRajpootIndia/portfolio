@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
+// eslint-disable-next-line no-unused-vars
 import { Provider } from "react-redux";
 
 import App from "./App";
