@@ -1,20 +1,15 @@
 import "../styles/projects-page.css";
 import ProjectCard from "../components/ProjectCard";
+import { projectsData } from "../data/projects-data";
 
 function ProjectsPage() {
   return (
     <div className="page-container">
       <div className="projects-page-container">
         <div className="project-cards-container">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {projectsData.map((project) => (
+            <ProjectCard project={project} />
+          ))}
         </div>
       </div>
     </div>

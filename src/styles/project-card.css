@@ -4,14 +4,16 @@
   border-radius: 2%;
   overflow: hidden;
   box-shadow: 0 10px 10px -4px rgba(150, 150, 150, 0.671);
+  transition: 0.3s;
 }
 
 .project-card-container:hover {
-  margin: -0.1rem;
+  scale: 1.05;
   box-shadow: 0 12px 12px -4px rgba(154, 139, 189, 0.849);
 }
 
 .project-card-container > img {
+  aspect-ratio: 4 / 3;
   width: 100%;
   box-shadow: 0 4px 4px -4px rgba(104, 104, 104, 0.514);
 }

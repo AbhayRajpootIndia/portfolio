@@ -14,6 +14,7 @@
 }
 
 .link-with-arrow-container > p {
+  text-decoration: none;
   color: var(--HeadingColor);
   font-family: Roboto;
   font-weight: 500;

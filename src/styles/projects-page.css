@@ -1,5 +1,6 @@
 .projects-page-container {
   width: 100%;
+  min-height: 100%;
   background-color: var(--BackgroundShade);
 }
 
@@ -8,6 +9,7 @@
   max-width: 1000px;
   overflow-wrap: break-word;
   padding: 2em;
+  background-color: var(--BackgroundShade);
 
   display: grid;
   gap: 3rem;

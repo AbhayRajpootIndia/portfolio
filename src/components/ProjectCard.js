@@ -1,20 +1,15 @@
 import "../styles/project-card.css";
 import LinkWithArrow from "./LinkWithArrow";
 
-function ProjectCard() {
+function ProjectCard(props) {
+  const project = props.project;
   return (
     <div className="project-card-container">
-      <img
-        src={require("../images/project-images/quiz-app-thumbnail.png")}
-        alt="thumbnail"
-      />
+      <img src={project.thumbnailUri} alt="thumbnail" />
       <div className="project-card-content">
-        <p>Quiz App</p>
-        <p>
-          App which asks quiz questions based on various topics such as Anime,
-          Movies, TV Shows, etc.
-        </p>
-        <LinkWithArrow linkText={"View In Vercel"} />
+        <p>{project.name}</p>
+        <p>{project.description}</p>
+        <LinkWithArrow linkText={"Visit The Site"} link={project.link} />
       </div>
     </div>
   );
