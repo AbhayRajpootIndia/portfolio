@@ -1,10 +1,15 @@
+import { useNavigate } from "react-router";
 import "../styles/project-card.css";
 import LinkWithArrow from "./LinkWithArrow";
 
 function ProjectCard(props) {
   const project = props.project;
+  const navigate = useNavigate();
   return (
-    <div className="project-card-container">
+    <div
+      className="project-card-container"
+      onClick={() => navigate(`/project/${project.pathName}`)}
+    >
       <img src={project.thumbnailUri} alt="thumbnail" />
       <div className="project-card-content">
         <p>{project.name}</p>

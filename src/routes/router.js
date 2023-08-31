@@ -6,6 +6,16 @@ import AboutMePage from "../pages/AboutMePage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ContactPage from "../pages/ContactPage";
 
+import ProjectDetailPage from "../pages/ProjectDetailPage";
+import { projectsData } from "../data/projects-data";
+
+export const subRoutes = [];
+
+const projectsRoutes = projectsData.map((project) => ({
+  path: `/project/${project.pathName}`,
+  element: <ProjectDetailPage project={project} />,
+}));
+
 export const routes = [
   {
     path: "/",
@@ -35,14 +45,8 @@ export const routes = [
     path: "/contact",
     element: <ContactPage />,
   },
-  {
-    path: "/contact",
-    element: <ContactPage />,
-  },
-  {
-    path: "/contact",
-    element: <ContactPage />,
-  },
+  ...subRoutes,
+  ...projectsRoutes,
 ];
 
 export const navbarRoutes = routes.filter((item) => (item.name ? true : false));

@@ -36,6 +36,7 @@ function NavBar() {
           fontSize: "1rem",
           marginRight: "3rem",
           minWidth: "10rem",
+          textTransform: "capitalize",
         }}
       >
         Contact me
