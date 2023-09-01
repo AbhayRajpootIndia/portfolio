@@ -24,7 +24,7 @@ function NavBar() {
       />
       <div className="navbar-buttons-container">
         {navbarRoutes.map((route) => (
-          <NavButton name={route.name} path={route.path} />
+          <NavButton name={route.name} path={route.path} key={route.name} />
         ))}
       </div>
       <a href="/contact">

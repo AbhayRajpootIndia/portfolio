@@ -4,6 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 
 // eslint-disable-next-line no-unused-vars
 import { Provider } from "react-redux";
+import { store } from "./store/redux/store";
 
 import App from "./App";
 
@@ -17,9 +18,11 @@ import "@fontsource/roboto/700.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

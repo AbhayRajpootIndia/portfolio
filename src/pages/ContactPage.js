@@ -11,6 +11,19 @@ import {
 } from "@mui/material";
 
 import { PrimaryColor, BodyColor, BackgroundShade } from "../constants/colors";
+import {
+  contactReasonOptions,
+  setMessage,
+} from "../store/redux/contactFormSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setEmail,
+  setFirstName,
+  setLastName,
+  setPhoneNumber,
+  setTopic,
+} from "../store/redux/contactFormSlice";
 
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -59,11 +72,13 @@ const StyledTextarea = styled(TextareaAutosize)(
   `
 );
 
-function CustomTextField({ label, id, placeholder }) {
+function CustomTextField({ label, value, onChange, id, placeholder }) {
   return (
     <div style={{ width: "50%", fontFamily: "Roboto" }}>
-      <label for={id}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <CssTextField
+        value={value}
+        onChange={onChange || null}
         variant="outlined"
         id={id}
         sx={{ width: "100%", marginTop: "0.4rem" }}
@@ -73,14 +88,19 @@ function CustomTextField({ label, id, placeholder }) {
   );
 }
 
-const contactReasonOptions = [
-  { label: "Job Offer", value: 1 },
-  { label: "Buisness Enquiry", value: 2 },
-  { label: "Feedback", value: 3 },
-  { label: "Complaint", value: 4 },
-];
-
 function ContactPage() {
+  const dispatch = useDispatch();
+  const firstName = useSelector((state) => state.contactForm.firstName);
+  const lastName = useSelector((state) => state.contactForm.lastName);
+  const email = useSelector((state) => state.contactForm.email);
+  const phoneNumber = useSelector((state) => state.contactForm.phoneNumber);
+  const topic = useSelector((state) => state.contactForm.topic);
+  const message = useSelector((state) => state.contactForm.message);
+
+  const onSubmit = () => {
+    alert("Thanks for the message!");
+  };
+
   return (
     <div className="page-container">
       <div className="contact-page">
@@ -94,11 +114,19 @@ function ContactPage() {
           <div>
             <CustomTextField
               label="First name"
+              value={firstName}
+              onChange={(event) =>
+                dispatch(setFirstName({ firstName: event.target.value }))
+              }
               id="first-name"
               placeholder="Enter your first name"
             />
             <CustomTextField
               label="Last name"
+              value={lastName}
+              onChange={(event) =>
+                dispatch(setLastName({ lastName: event.target.value }))
+              }
               id="last-name"
               placeholder="Enter your last name"
             />
@@ -107,20 +135,32 @@ function ContactPage() {
           <div>
             <CustomTextField
               label="Email"
+              value={email}
+              onChange={(event) =>
+                dispatch(setEmail({ email: event.target.value }))
+              }
               id="email"
               placeholder="Enter your email address"
             />
             <CustomTextField
               label="Phone number"
+              value={phoneNumber}
+              onChange={(event) =>
+                dispatch(setPhoneNumber({ phoneNumber: event.target.value }))
+              }
               id="phone"
               placeholder="Enter your phone number"
             />
           </div>
 
           <div>
-            <label for="message-topic">Choose a topic</label>
+            <label htmlFor="message-topic">Choose a topic</label>
             <Autocomplete
               disablePortal
+              value={topic}
+              onChange={(event, newValue) =>
+                dispatch(setTopic({ topic: newValue }))
+              }
               id="message-topic"
               options={contactReasonOptions}
               sx={{ width: "100%", marginTop: "0.4rem" }}
@@ -129,8 +169,15 @@ function ContactPage() {
           </div>
 
           <div style={{ width: "70%", overflow: "hidden" }}>
-            <label for="message">Message</label>
-            <StyledTextarea id="message" sx={{ marginTop: "0.4rem" }} />
+            <label htmlFor="message">Message</label>
+            <StyledTextarea
+              value={message}
+              onChange={(event) =>
+                dispatch(setMessage({ message: event.target.value }))
+              }
+              id="message"
+              sx={{ marginTop: "0.4rem" }}
+            />
           </div>
 
           <div>
@@ -144,6 +191,7 @@ function ContactPage() {
 
           <Button
             type="submit"
+            onClick={onSubmit}
             variant="contained"
             sx={{ backgroundColor: PrimaryColor }}
           >
