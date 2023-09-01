@@ -8,12 +8,13 @@ function ProjectCard(props) {
   return (
     <div
       className="project-card-container"
-      onClick={() => navigate(`/project/${project.pathName}`)}
+      onClick={() => navigate(`/projects/${project.pathName}`)}
     >
       <img src={project.thumbnailUri} alt="thumbnail" />
+
       <div className="project-card-content">
         <p>{project.name}</p>
-        <p>{project.description}</p>
+        <p style={{}}>{project.description}</p>
         <LinkWithArrow linkText={"Visit The Site"} link={project.link} />
       </div>
     </div>

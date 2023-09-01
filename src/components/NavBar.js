@@ -27,20 +27,22 @@ function NavBar() {
           <NavButton name={route.name} path={route.path} />
         ))}
       </div>
-      <Button
-        variant="outlined"
-        sx={{
-          color: PrimaryColor,
-          borderColor: PrimaryColor,
-          padding: "0.4rem 1rem",
-          fontSize: "1rem",
-          marginRight: "3rem",
-          minWidth: "10rem",
-          textTransform: "capitalize",
-        }}
-      >
-        Contact me
-      </Button>
+      <a href="/contact">
+        <Button
+          variant="outlined"
+          sx={{
+            color: PrimaryColor,
+            borderColor: PrimaryColor,
+            padding: "0.4rem 1rem",
+            fontSize: "1rem",
+            marginRight: "3rem",
+            minWidth: "10rem",
+            textTransform: "capitalize",
+          }}
+        >
+          Contact me
+        </Button>
+      </a>
     </div>
   );
 }

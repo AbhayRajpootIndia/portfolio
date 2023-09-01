@@ -12,7 +12,7 @@ import { projectsData } from "../data/projects-data";
 export const subRoutes = [];
 
 const projectsRoutes = projectsData.map((project) => ({
-  path: `/project/${project.pathName}`,
+  path: `/projects/${project.pathName}`,
   element: <ProjectDetailPage project={project} />,
 }));
 
