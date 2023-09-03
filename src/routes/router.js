@@ -26,11 +26,11 @@ export const routes = [
     element: <HomePage />,
     name: "Home",
   },
-  {
-    path: "/portfolio",
-    element: <PortfolioPage />,
-    name: "Portfolio",
-  },
+  // {
+  //   path: "/portfolio",
+  //   element: <PortfolioPage />,
+  //   name: "Portfolio",
+  // },
   {
     path: "/projects",
     element: <ProjectsPage />,

@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 
 import { PrimaryColor, BodyColor, BackgroundShade } from "../constants/colors";
+
 import {
   contactReasonOptions,
   setMessage,
@@ -55,7 +56,7 @@ const StyledTextarea = styled(TextareaAutosize)(
     font-weight: 400;
     line-height: 1.5;
     border-radius: 0.4rem;
-    color: black;   
+    color: black;    
     background-color: ${BackgroundShade};
     border: 1px solid black; 
     border-color: #B2BAC2;

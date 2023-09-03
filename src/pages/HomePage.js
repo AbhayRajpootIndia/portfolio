@@ -1,24 +1,31 @@
-import { PrimaryColor } from "../constants/colors";
 import "../styles/home-page.css";
+
+import { PrimaryColor } from "../constants/colors";
+
+import { useNavigate } from "react-router";
 
 import { Button } from "@mui/material";
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="page-container">
       <div className="home-page-container">
         <div className="intro-containner">
           <p>Hey, I am Abhay</p>
           <p>
-            I create <span style={{ color: PrimaryColor }}>product design</span>{" "}
-            and brand experience
+            I create{" "}
+            <span style={{ color: PrimaryColor }}>software products</span> and
+            brand experience
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
+            I'm a passionate Computer Science Engineering student at<br></br>{" "}
+            JSS Academy of Technical Education, Bengaluru.
           </p>
           <Button
             variant="contained"
+            onClick={() => navigate("/contact")}
             sx={{
               backgroundColor: PrimaryColor,
               padding: "0.4rem 1rem",

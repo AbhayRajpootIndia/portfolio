@@ -2,15 +2,23 @@
   background-color: var(--BackgroundShade);
   display: flex;
   min-height: 600px;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 0rem 5rem;
 }
 
-.aboutme-page > img {
+.aboutme-page > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.aboutme-page > div > img {
   width: 50%;
-  margin-bottom: 2rem;
+  border-radius: 2rem;
 }
 
 .aboutme-content {
@@ -20,16 +28,16 @@
 .aboutme-content > p {
   color: var(--HeadingColor);
   font-family: Roboto;
-  word-wrap: break-word;
-  margin: 0.8rem 0rem;
 }
 
 .aboutme-content > p:nth-child(1) {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 0;
 }
 
 .aboutme-content > p:nth-child(2) {
+  text-align: justify;
   font-weight: 400;
   font-size: 1.5rem;
 }
