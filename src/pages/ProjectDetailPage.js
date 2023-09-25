@@ -31,7 +31,9 @@ function ProjectDetailPage({ project }) {
             </a>
           </div>
           <img src={project.thumbnailUri} alt="project-thumbnail" />
-          <p>{project.longDescription}</p>
+          {project.longDescription.map((item) => (
+            <p>{item}</p>
+          ))}
         </div>
       </div>
     </div>
