@@ -8,7 +8,7 @@ function ProjectsPage() {
       <div className="projects-page-container">
         <div className="project-cards-container">
           {projectsData.map((project) => (
-            <ProjectCard project={project} />
+            <ProjectCard project={project} key={project.pathName} />
           ))}
         </div>
       </div>

@@ -1,14 +1,34 @@
 import "../styles/project-details.css";
 import { PrimaryColor } from "../constants/colors";
 import { Button } from "@mui/material";
+import { useIsVertical } from "../custom-hooks/dimensions";
+import { isMobile } from "react-device-detect";
 
 function ProjectDetailPage({ project }) {
+  const isVertical = useIsVertical();
+  const customHeaderStyle =
+    isVertical || isMobile
+      ? {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          margin: "1rem 0rem",
+        }
+      : {};
+  const customNameStyles =
+    isVertical || isMobile
+      ? {
+          margin: " 1rem 0rem",
+        }
+      : {};
   return (
     <div className="page-container">
       <div className="project-details-container">
         <div className="project-details-content">
-          <div>
-            <p className="project-details-name">{project.name}</p>
+          <div style={customHeaderStyle}>
+            <p className="project-details-name" style={customNameStyles}>
+              {project.name}
+            </p>
             <a
               href={project.link}
               target="_blank"
